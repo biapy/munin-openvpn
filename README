@@ -1,0 +1,6 @@
+README
+============
+
+This plugin for munin handles OpenVPN status output (for status-version 2).
+I like this status-version more than the others because each line of said status file
+is prepended with a header, making each line much more easily programatically parsed.
