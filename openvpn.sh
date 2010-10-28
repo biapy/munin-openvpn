@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 if [[ $1 == "config" ]]; then
     echo "graph_title OpenVPN Users"
@@ -12,4 +12,5 @@ USERCOUNT=0
 OVPNSTATUSFILE=$statusfile
 USERCOUNT=`grep ^CLIENT_LIST $OVPNSTATUSFILE | wc -l`
 
-echo "user.count $usercount"
+echo "user.count $USERCOUNT"
+exit 0
