@@ -11,6 +11,7 @@
 if [[ $1 == "config" ]]; then
     echo "graph_title OpenVPN Users"
     echo "graph_vlabel User Count"
+    echo "graph_category openvpn"
     echo "user.label Logged In Users"
     exit 0
 fi
