@@ -25,5 +25,5 @@ fi
 
 USERCOUNT=`grep ^CLIENT_LIST $OVPNSTATUSFILE | wc -l`
 
-echo "user.count $USERCOUNT"
+echo "user.value $USERCOUNT"
 exit 0
