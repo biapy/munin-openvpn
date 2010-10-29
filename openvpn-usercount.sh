@@ -1,11 +1,11 @@
 #!/bin/bash
 
-## Munin plugin to return how many OpenVPN sessions are active.
+## Munin plugin to return how many OpenVPN sessions are currently connected to an OpenVPN server.
 ## Requirements for OpenVPN server config file:
-### status-file $foo
+### status /var/log/openvpn/status.log 60
 ### status-version 2
-## Requirements for 'openvpn-users' config stanza for munin-node:
-### [openvpn-users]
+## Requirements for 'openvpn_usercount' config stanza for munin-node:
+### [openvpn_usercount]
 ### env.statusfile "/var/log/openvpn.stat"
 
 if [[ $1 == "config" ]]; then
@@ -17,6 +17,11 @@ if [[ $1 == "config" ]]; then
 fi
 
 OVPNSTATUSFILE=$statusfile
+
+if [ -z $OVPNSTATUSFILE ]; then
+    echo "The environment variable setting the status file is not set."
+    exit 1
+fi
 
 if [ ! -e $OVPNSTATUSFILE ]; then
     echo "OpenVPN status file $OVPNSTATUSFILE does not exist"
