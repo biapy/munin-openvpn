@@ -6,7 +6,8 @@
 ### status-version 2
 ## Requirements for 'openvpn_usercount' config stanza for munin-node:
 ### [openvpn_usercount]
-### env.statusfile "/var/log/openvpn.stat"
+### env.statusfile "/var/log/openvpn.status"
+### user root
 
 if [[ $1 == "config" ]]; then
     echo "graph_title OpenVPN Users"
