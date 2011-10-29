@@ -4,7 +4,7 @@
 
 IFS=$'\n'
 statusfile=/var/log/openvpn/status.log
-client_list="`grep ^CLIENT_LIST $statusfile`"
+client_list="`grep ^CLIENT_LIST $statusfile| sed 's/\./-/g'`"
 
 if [[ $1 == "config" ]]; then
     echo "graph_title OpenVPN User Transfer Rate"
