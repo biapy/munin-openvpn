@@ -1,11 +1,60 @@
 README
 ============
 
-This plugin for munin parses OpenVPN status output.
+This plugin for munin parses OpenVPN status output. It graphs:
 
+ * Count of connected users
+ * Sent and received bytes for each user
 
-Requirements
+This plugin is writen in bash. It has no specific requirements. It auto-detects
+OpenVPN status-version configuration option value.
+
+Installation
 ============
-I have the assumption that "status-version 2" is used in the OpenVPN config file.
 
-This provides for the most programatically-easy way of parsing that file.
+Install the plugin with:
+
+  command wget 'https://raw.github.com/biapy/munin-openvpn/master/openvpn_usercount'
+  command chmod +x '/usr/share/munin/plugins/openvpn_usercount'
+  command wget 'https://raw.github.com/biapy/munin-openvpn/master/openvpn_usertranfer'
+  command chmod +x '/usr/share/munin/plugins/openvpn_usertranfer'
+
+Enable it with:
+
+  command ln -s '/usr/share/munin/plugins/openvpn_usertranfer' '/etc/munin/plugins/openvpn_usertransfer'
+  command ln -s '/usr/share/munin/plugins/openvpn_usercount' '/etc/munin/plugins/openvpn_usercount'
+
+You can graph multiple OpenVPN networks by appending the network name to plugin alias (here for 'network.vpn'):
+
+  command ln -s '/usr/share/munin/plugins/openvpn_usertranfer' '/etc/munin/plugins/openvpn_usertransfer_network.vpn'
+  command ln -s '/usr/share/munin/plugins/openvpn_usercount' '/etc/munin/plugins/openvpn_usercount_network.vpn'
+
+Add these lines (adapted to your need) to munin-node configuration:
+
+  [openvpn_usertransfer]
+  user root
+  env.statusfile /var/log/openvpn-status.log
+
+  [openvpn_usercount]
+  user root
+  env.statusfile /var/log/openvpn-status.log
+
+  [openvpn_usertransfer_network.vpn]
+  user root
+  env.statusfile /var/log/openvpn/network.vpn/openvpn-status.log
+
+  [openvpn_usercount_network.vpn]
+  user root
+  env.statusfile /var/log/openvpn/network.vpn/openvpn-status.log
+
+Credits
+=======
+
+This plugin was originaly created by Jeffrey Forman ( https://github.com/jforman )
+
+Its current version has been written by Pierre-Yves Landure for Biapy:
+
+  * http://www.biapy.fr/
+  * http://howto.biapy.com/
+  * https://github.com/biapy
+
