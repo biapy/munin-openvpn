@@ -14,9 +14,11 @@ Installation
 
 Install the plugin with:
 
-  command wget 'https://raw.github.com/biapy/munin-openvpn/master/openvpn_usercount'
+  command wget 'https://raw.github.com/biapy/munin-openvpn/master/openvpn_usercount' \
+      --output-document='/usr/share/munin/plugins/openvpn_usercount'
   command chmod +x '/usr/share/munin/plugins/openvpn_usercount'
-  command wget 'https://raw.github.com/biapy/munin-openvpn/master/openvpn_usertranfer'
+  command wget 'https://raw.github.com/biapy/munin-openvpn/master/openvpn_usertranfer' \
+      --output-document='/usr/share/munin/plugins/openvpn_usertranfer'
   command chmod +x '/usr/share/munin/plugins/openvpn_usertranfer'
 
 Enable it with:
