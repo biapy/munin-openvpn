@@ -6,7 +6,7 @@ This plugin for munin parses OpenVPN status output. It graphs:
  * Count of connected users
  * Sent and received bytes for each user
 
-This plugin is writen in bash. It has no specific requirements. It auto-detects
+This plugin is written in bash. It has no specific requirements. It auto-detects
 OpenVPN status-version configuration option value.
 
 Installation
@@ -17,18 +17,18 @@ Install the plugin with:
   command wget 'https://raw.github.com/biapy/munin-openvpn/master/openvpn_usercount' \
       --no-check-certificate --output-document='/usr/share/munin/plugins/openvpn_usercount'
   command chmod +x '/usr/share/munin/plugins/openvpn_usercount'
-  command wget 'https://raw.github.com/biapy/munin-openvpn/master/openvpn_usertranfer' \
-      --no-check-certificate --output-document='/usr/share/munin/plugins/openvpn_usertranfer'
-  command chmod +x '/usr/share/munin/plugins/openvpn_usertranfer'
+  command wget 'https://raw.github.com/biapy/munin-openvpn/master/openvpn_usertransfer' \
+      --no-check-certificate --output-document='/usr/share/munin/plugins/openvpn_usertransfer'
+  command chmod +x '/usr/share/munin/plugins/openvpn_usertransfer'
 
 Enable it with:
 
-  command ln -s '/usr/share/munin/plugins/openvpn_usertranfer' '/etc/munin/plugins/openvpn_usertransfer'
+  command ln -s '/usr/share/munin/plugins/openvpn_usertransfer' '/etc/munin/plugins/openvpn_usertransfer'
   command ln -s '/usr/share/munin/plugins/openvpn_usercount' '/etc/munin/plugins/openvpn_usercount'
 
 You can graph multiple OpenVPN networks by appending the network name to plugin alias (here for 'network.vpn'):
 
-  command ln -s '/usr/share/munin/plugins/openvpn_usertranfer' '/etc/munin/plugins/openvpn_usertransfer_network.vpn'
+  command ln -s '/usr/share/munin/plugins/openvpn_usertransfer' '/etc/munin/plugins/openvpn_usertransfer_network.vpn'
   command ln -s '/usr/share/munin/plugins/openvpn_usercount' '/etc/munin/plugins/openvpn_usercount_network.vpn'
 
 Add these lines (adapted to your need) to munin-node configuration:
