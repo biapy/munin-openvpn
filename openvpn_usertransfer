@@ -16,6 +16,9 @@
 ### user root
 ### env.statusfile "/var/log/openvpn/network.vpn/openvpn-status.log"
 ##
+## Original Author: Jeffrey Forman ( https://github.com/jforman )
+## Enhanced by : Pierre-Yves Landuré for Biapy ( https://github.com/biapy )
+##
 
 # Compute statusfile option.
 OPENVPN_STATUS_FILE="/var/log/openvpn-status.log"

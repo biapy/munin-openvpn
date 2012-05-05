@@ -1,5 +1,5 @@
 #!/bin/bash
-
+##
 ## Munin plugin to return how many OpenVPN sessions are currently connected to
 ## an OpenVPN server.
 ##
@@ -16,6 +16,9 @@
 ### [openvpn_usercount_network.vpn]
 ### user root
 ### env.statusfile "/var/log/openvpn/network.vpn/openvpn-status.log"
+##
+## Original Author: Jeffrey Forman ( https://github.com/jforman )
+## Enhanced by : Pierre-Yves Landuré for Biapy ( https://github.com/biapy )
 ##
 
 # Compute statusfile option.
