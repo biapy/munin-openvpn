@@ -2,7 +2,7 @@
 ##
 ## Munin plugin to return the transfer in bytes of each user.
 ##
-## The 'openvpn_usercount' config stanza for munin-node looks like:
+## The 'openvpn_usertransfer' config stanza for munin-node looks like:
 ##
 ### [openvpn_usertransfer]
 ### user root
